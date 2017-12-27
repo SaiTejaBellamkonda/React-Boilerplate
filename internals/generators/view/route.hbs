@@ -1,0 +1,9 @@
+ {
+      path: '{{ routePath }}',
+      name: '{{ camelCase viewName }}',
+      getComponent(location, cb) {
+        import('views/{{ properCase viewName }}')
+          .then(loadModule(cb))
+          .catch(errorLoading);
+      },
+    },$1

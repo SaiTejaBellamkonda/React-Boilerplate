@@ -1,0 +1,36 @@
+import { createSelector } from 'reselect';
+{{#if wantActionsAndReducer}}
+/**
+ * Direct selector to the {{ camelCase viewName }} state in the Store
+ */
+export const select{{ properCase viewName }}State = () => (state) => state.get('{{ camelCase viewName }}');
+
+/**
+ * Other specific selectors
+ */
+
+/**
+ * Default selector used by {{ properCase viewName }}
+ */
+
+export const makeSelect{{ properCase viewName }} = () => createSelector(
+  select{{ properCase viewName }}State(),
+  (substate) => substate.toJS()
+);
+{{else}}
+/**
+ * Passthrough selector to the global store
+ */
+
+export const selectStore = () => (state) => state;
+
+/**
+ * Default selector used by {{ properCase viewName }}
+ */
+export const makeSelect{{ properCase viewName }} = () => createSelector(
+  selectStore(),
+  (substate) => substate.toJS()
+);
+{{/if}}
+
+export default makeSelect{{ properCase viewName }};

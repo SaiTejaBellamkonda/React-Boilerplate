@@ -1,0 +1,20 @@
+
+{{#if wantActionsAndReducer}}
+// import { fromJS } from 'immutable';
+// import { makeSelect{{ properCase name }}State } from '../selectors';
+
+// const selector = makeSelect{{ properCase name}}State();
+
+describe('makeSelect{{ properCase name }}State', () => {
+{{else}}
+// import { fromJS } from 'immutable';
+// import { makeSelect{{ properCase name }} } from '../selectors';
+
+// const selector = makeSelect{{ properCase name}}();
+
+describe('makeSelect{{ properCase name }}', () => {
+{{/if}}
+  it('Expect to have unit tests specified', () => {
+    expect(true).toEqual(false);
+  });
+});

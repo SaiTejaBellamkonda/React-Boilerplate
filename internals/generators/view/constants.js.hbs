@@ -1,0 +1,10 @@
+/*
+ *
+ * {{ properCase viewName }} constants
+ *
+ */
+{{#if wantActionsAndReducer}}
+export const EXAMPLE_ACTION_TYPE = 'app/{{ properCase viewName }}/EXAMPLE_ACTION_TYPE';
+{{else}}
+export const EXAMPLE_CONSTANT = 'EXAMPLE_CONSTANT';
+{{/if}}

@@ -1,0 +1,8 @@
+import { fromJS } from 'immutable';
+import {{ camelCase viewName }}Reducer from '../reducer';
+
+describe('{{ camelCase viewName }}Reducer', () => {
+  it('returns the initial state', () => {
+    expect({{ camelCase viewName }}Reducer(undefined, {})).toEqual(fromJS({}));
+  });
+});

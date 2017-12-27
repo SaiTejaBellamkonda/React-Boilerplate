@@ -1,0 +1,23 @@
+/*
+ *
+ * {{ properCase viewName }} reducer
+ *
+ */
+
+import { fromJS } from 'immutable';
+import {
+  EXAMPLE_ACTION_TYPE,
+} from './constants';
+
+const initialState = fromJS({});
+
+function {{ camelCase viewName }}Reducer(state = initialState, action) {
+  switch (action.type) {
+    case EXAMPLE_ACTION_TYPE:
+      return state;
+    default:
+      return state;
+  }
+}
+
+export default {{ camelCase viewName }}Reducer;

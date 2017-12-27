@@ -1,0 +1,21 @@
+import { connect } from 'react-redux';
+{{#if wantActionsAndReducer}}
+import { createStructuredSelector } from 'reselect';
+import makeSelect{{properCase viewName}} from '../modules/selectors';
+{{/if}}
+import {{properCase viewName}} from '../components/{{properCase viewName}}.jsx';
+
+const mapDispatchToProps = {
+};
+
+{{#if wantActionsAndReducer}}
+const mapStateToProps = createStructuredSelector({
+  {{viewName}}: makeSelect{{properCase viewName}}(),
+});
+{{/if}}
+
+{{#if wantActionsAndReducer}}
+export default connect(mapStateToProps, mapDispatchToProps)({{ properCase viewName }});
+{{else}}
+export default connect(null, mapDispatchToProps)({{ properCase viewName }});
+{{/if}}

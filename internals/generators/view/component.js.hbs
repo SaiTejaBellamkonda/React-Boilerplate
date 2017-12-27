@@ -1,0 +1,33 @@
+import React from 'react';
+// import PropTypes from 'prop-types';
+{{#if wantMessages}}
+import { FormattedMessage } from 'react-intl';
+{{/if}}
+
+{{#if wantMessages}}
+import messages from '../modules/messages';
+{{/if}}
+
+
+export const {{properCase viewName}} = (/* props */) => (
+  <div>
+    {{#if wantMessages}}
+    <FormattedMessage {...messages.example} />
+    {{else}}
+    &nbsp;
+    {{/if}}
+  </div>
+);
+
+/*
+{{properCase viewName}}.defaultProps = {
+
+};
+
+{{properCase viewName}}.propTypes = {
+
+};
+
+*/
+
+export default {{properCase viewName}};
