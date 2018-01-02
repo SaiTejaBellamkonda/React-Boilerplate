@@ -8,12 +8,6 @@
 
 import React from 'react';
 import Helmet from 'react-helmet';
-import {
-  Masthead,
-  LeftStrip,
-  SingleSelectGroup,
-  MultiSelectGroup,
-} from 'ui-core';
 import './styles.scss';
 
 export const App = (props) => (
@@ -25,32 +19,9 @@ export const App = (props) => (
         { name: 'description', content: 'A React.js Boilerplate application' },
       ]}
     />
+    <div><h1>Welcome! Sai Teja for the new Journey</h1></div>
 
-    <Masthead
-      {...props.mastheadConfig}
-      {...props.mastheadActions}
-      onNavMenuSelect={(event, state) => {
-        const item = props.mastheadConfig.navMenuItems[state.activeSectionIndex][state.activeMenuItemIndex];
-        props.mastheadActions.onNavMenuSelect(event, item);
-      }}
-    />
-
-    <LeftStrip title="Task Workflow">
-      <SingleSelectGroup
-        items={props.leftStripConfig.singleSelectGroupItems}
-        title="Assigned to me"
-        orientation="right"
-        onSelect={props.leftStripActions.onSingleGroupSelect}
-      />
-      <MultiSelectGroup
-        headerId="Foo"
-        headerText="Multi Select Group"
-        menuItems={props.leftStripConfig.multiSelectGroupItems}
-        onCheckGroup={props.leftStripActions.onMultiGroupCheckHeader}
-        onCheckItem={props.leftStripActions.onMultiGroupCheck}
-        isLastChild
-      />
-    </LeftStrip>
+    
     <div id="main_content">
       {React.Children.toArray(props.children)}
     </div>
